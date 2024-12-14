@@ -9,6 +9,7 @@ package com.gmail.fishnet37222.jfndice;
 
 import java.awt.BorderLayout;
 import java.awt.Dimension;
+import java.awt.GridLayout;
 import java.awt.Image;
 import java.awt.event.WindowAdapter;
 import java.awt.event.WindowEvent;
@@ -18,6 +19,8 @@ import javax.swing.Box;
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JFrame;
+import javax.swing.JLabel;
+import javax.swing.JPanel;
 import javax.swing.JToolBar;
 import javax.swing.WindowConstants;
 
@@ -75,6 +78,20 @@ public class MainWindow extends JFrame
 		
 		add(Box.createRigidArea(new Dimension(12,12)), BorderLayout.LINE_START);
 		add(Box.createRigidArea(new Dimension(12,12)), BorderLayout.LINE_END);
+		
+		var statusBar = new JPanel();
+		statusBar.setLayout(new GridLayout(1, 3, 5, 5));
+		
+		var sbpPlayer = new JLabel(" ");
+		statusBar.add(sbpPlayer);
+		
+		var sbpCurrentRound = new JLabel(" ");
+		statusBar.add(sbpCurrentRound);
+		
+		var sbpCurrentRoll = new JLabel(" ");
+		statusBar.add(sbpCurrentRoll);
+		
+		add(statusBar, BorderLayout.PAGE_END);
 		
 		pack();
 		setResizable(false);
